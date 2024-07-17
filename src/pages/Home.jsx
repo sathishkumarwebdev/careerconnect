@@ -1,12 +1,19 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import career from "../assets/career.svg";
+import downarrow from "../assets/downarrow.png"
+import uparrow from "../assets/uparrow.png";
 import { FaSearch } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 import { BsFillBuildingsFill } from "react-icons/bs";
 import { FaBriefcase } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
 import { RiBriefcase4Fill } from "react-icons/ri";
+import { LuUserPlus2 } from "react-icons/lu";
+import { MdCloudUpload } from "react-icons/md";
+import { IoSearchCircle } from "react-icons/io5";
+import { TbRosetteDiscountCheckFilled } from "react-icons/tb";
+
 export default function Home() {
   return (
     <>
@@ -14,9 +21,13 @@ export default function Home() {
       <div className="home-container">
         <div className="home-top">
           <div className="home-section">
-            <div className="words">Find a job that suits</div>
-            <div className="words">your interest & skills</div>
-            <div className="search-box">
+            <div className="words  animate__animated  animate__bounceInLeft">
+              Find a job that suits
+            </div>
+            <div className="words  animate__animated  animate__bounceInLeft">
+              your interest & skills
+            </div>
+            <div className="search-box  animate__animated  animate__bounceInRight">
               <FaSearch className="search-box-icon" />
               <input type="text" className="box-input" />{" "}
               <span className="split">|</span>
@@ -72,6 +83,101 @@ export default function Home() {
               <div>
                 <p>New jobs</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="home-vacancies">
+        <div className="vacancies-title"> Most Popular Vacancies</div>
+        <div className="vacancies-content">
+          <div className="job-list">
+            Anesthesiologists
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            Surgeons
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            Obstetricians-Gynecologists
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            Orthodontistsr
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            Maxillofacial Surgeons
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            Software Developer
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            Psychiatrists
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            Data Scientist{" "}
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            Financial Manager
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            Management Analysis
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            IT Manager
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+          <div className="job-list">
+            Operations Research Analysis
+            <p className="job-list-content">45,904 Open Positions</p>
+          </div>
+        </div>
+      </div>
+      <div className="work-flow">
+        <div className="work-flow-title">How Career Connect work</div>
+        <div className="work-flow-content">
+          <div className="work-flow-content-box">
+            <div className="work-flow-icon">
+              <LuUserPlus2 />
+            </div>
+            Create Account
+            <div className="arrow-down">
+              <img src={downarrow} alt="down" />
+            </div>
+          </div>
+
+          <div className="work-flow-content-box">
+            <div className="work-flow-icon">
+              <MdCloudUpload />
+            </div>
+            Upload CV/Resume
+            <div className="arrow-up">
+              <img src={uparrow} alt="down" />
+            </div>
+          </div>
+          <div className="work-flow-content-box">
+            <div className="work-flow-icon">
+              <IoSearchCircle />
+            </div>
+            Find suitable job
+            <div className="arrow-down">
+              <img src={downarrow} alt="down" />
+            </div>
+          </div>
+          <div className="work-flow-content-box">
+            <div className="work-flow-icon">
+              <TbRosetteDiscountCheckFilled />
+            </div>
+            Apply job
+            <div className="arrow-up">
+              <img src={uparrow} alt="" className="img"/>
             </div>
           </div>
         </div>
