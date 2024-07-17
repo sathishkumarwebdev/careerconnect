@@ -1,1 +1,426 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+:root {
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: var(--color-grey-grade10);
+  font-family: "Alata", sans-serif;
+  /* background-image: linear-gradient(to right, #9e31f1, #d32de4); */
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --color-primary:#fdc600;
+  --color-background-primary:#faf3da;
+  --color-white: #f0f0f0;
+  --color-white-bg: #fff;
+  --color-black: #000;
+  --color-light-black: #172337;
+  --color-border-grey: #e4e7ed;
+  --color-brand-orange: #fb641b;
+  --color-brand-blue: #2874f0;
+  --color-brand-bbd: #2455f4;
+  --color-brand-refurb: #f2575b;
+  --color-brand-footer: #172337;
+  --color-brand-blue-lighter: #7accff;
+  --color-brand-blue-lighter1: #dfeafd;
+  --color-blue-lighter1: #b3d7ff;
+  --color-blue-lighter2: #2370f4;
+  --color-blue-lighter3: #2a55e5;
+  --color-blue-lighter4: #f5f7fa;
+  --color-blue-lighter5: #d5d7db;
+  --color-blue-lighter6: #cfe1ff;
+  --color-blue-lighter7: #f0f5ff;
+  --color-primary-yellow: #ffe11b;
+  --color-primary-yellow2: #f1d27d;
+  --color-yellow-grade1: #fff7e1;
+  --color-yellow-grade2: #fef8e0;
+  --color-purple: #5f4eeb;
+  --color-offer-green: #388e3c;
+  --color-green-grade0: #26a541;
+  --color-green-grade1: #e9f2e9;
+  --color-green-grade2: #e6f4e8;
+  --color-green-grade3: #e6f3e6;
+  --color-green-grade4: #008c00;
+  --color-yellowish-orange: #ff9f00;
+  --color-flash-green: #11c29b;
+  --color-error-red: #ff6161;
+  --color-error-red2: #ff4343;
+  --color-error-red3: #ffeaed;
+  --color-error-red4: #dd5354;
+  --color-error-red5: #d23276;
+  --color-error-red6: #e4001e;
+  --color-error-red7: #e32727;
+  --color-grey-grade0: #fafafa;
+  --color-grey-grade1: #f0f0f0;
+  --color-grey-grade2: #e0e0e0;
+  --color-grey-grade3: #c2c2c2;
+  --color-grey-grade4: #878787;
+  --color-grey-grade5: #212121;
+  --color-grey-grade6: #d7d7d7;
+  --color-grey-grade7: #f9f9f9;
+  --color-grey-grade8: #9e9e9e;
+  --color-grey-grade9: #efefef;
+  --color-grey-grade10: #f5f5f5;
+  --color-grey-grade11: #aaa;
+  --color-grey-grade12: #dbdbdb;
+  --color-grey-grade13: #fbfbfb;
+  --color-grey-grade14: #666;
+  --color-grey-grade15: #f8f8f8;
+  --color-grey-grade16: #eee;
+  --color-grey-grade17: #9b9b9b;
+  --color-grey-grade18: #686868;
+  --color-grey-grade19: #eaeaea;
+  --color-grey-grade20: #e6e6e6;
+  --color-grey-grade21: #e9e9e9;
+  --color-grey-grade22: #d8d8d8;
+  --color-grey-grade23: #ffcbd0;
+  --color-grey-grade24: #717478;
+  --color-grey-grade25: #111112;
+  --color-grey-grade26: #f0f2f5;
+  --color-grey-grade27: #e4e7ed;
+  --color-grey-grade28: #d5d7db;
+  --color-grey-grade29: #bdbdbd;
+  --color-greyish-blue: #b8bbbf;
+  --color-light-greyish-blue: #f1f3f5;
+  --color-error-bg: #fff7f8;
+  --color-info-bg: #ffffe6;
+  --color-info-light-bg: #fffbf6;
+  --color-page-bg: #f1f3f6;
+  --color-green-bg: #f7fffa;
+  --color-blue-bg: #f5faff;
+  --color-vip-black-bg: #343c4e;
+  --color-grey-badge: #717171;
+  --color-grey-light: #d3d3d3;
+  --color-grey-light2: #d5d7db;
+  --color-vendor-text: #3f3f3f;
+  --color-supermart-green: #26a541;
+  --color-dark-blue1: #1d6ded;
+  --color-light-blue: #f4f8ff;
+  --color-light-blue1: #bed5fa;
+  --color-light-blue2: #93b7f1;
+  --color-light-blue3: #f0f5ff;
+  --color-suparmart-fk-background: #258b3b;
+  --color-info-yellow: #fffdec;
+  --color-cobranded-footer-blue: #005387;
+  --color-pre-book-purple: #854987;
+  --color-light-pink: #fff0ff;
+  --color-light-orange: #fdf5e7;
+  --color-orange-bg: #fff7e1;
+  --color-bright-orange: #e79900;
+  --color-payment-orange: #ffc200;
+  --color-wishlist-red: #ff4343;
+  --color-light-green: #e7f8ec;
+  --color-selector-black: #010101;
+  --color-light-grey-orange: #fef7e9;
+  --color-mustard: #af7b1c;
+  --color-light-white-bg: #f5f7fa;
+  --header-width-min: 790px;
+  --width-min: 978px;
+  --width-max: 1680px;
+  --product-page-gutter: 24px;
+  --product-section-title-width: 110px;
+  --product-section-title-padding: 10px;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-size-8: 8px;
+  --font-size-10: 10px;
+  --font-size-11: 11px;
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-32: 32px;
+  --font-size-default: 14px;
+}
+button{
+  cursor: pointer;
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #e7e7e7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 50px;
+  background-color: #fff;
+  font-family: "Open Sans", sans-serif;
+  position: sticky;
+  top:0;
+}
+.nav-list {
+  display: flex;
+  /* border: 1px solid red; */
+  width: 800px;
+  height: 100px;
+  max-height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  color: #929292;
+  background-color: transparent;
+  cursor: pointer;
+}
+.nav-btn {
+  /* width: 20%; */
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  height: 100px;
+  align-items: center;
+}
+.btn-list  {
+  width: 80px;
+  height: 40px;
+  border: none;
+  /* border-radius: 5px; */
+  color: #fff;
+  text-align: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  border: 6px solid var(--color-primary);
+  width: 180px;
+  justify-content: space-between;
+  padding: 5px;
+  height: 50px;
+}
+.btn-login {
+  background-color:var(--color-primary);
+}
+.btn-login:hover{
+  background-color: var(--color-primary);
+}
+.nav-list div:hover{
+  border-bottom: 4px solidvar(--color-primary);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+    
+}
+
+
+/* Home page */
+
+.home-container{
+  height: 100vh;
+  /* background-image: url("./assets/careerimg.jpg");
+  background-position: center; */
+  /* background-color: #F3F3F3; */
+  /* background-image: url("./assets/career3.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain; */
+  background: #494C53 url("./assets/careerimg.jpg") no-repeat scroll center top / cover;
+    background-color: rgb(73, 76, 83);
+   
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-image: url("./assets/careerimg.jpg");
+    background-size: cover;
+    background-origin: padding-box;
+    background-clip: border-box;
+    
+}
+.home-top{
+  height: 70%;
+  /* border: 1px solid red; */
+  display: flex;
+}
+
+.home-left-section{
+  width: 50%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 50px;
+}
+.home-section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.search-box{
+  /* border: 1px solid #e7e7e7; */
+  width: 50%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 50px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E6E6E6;
+}
+.search-box input{
+  border: none;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.box-input:focus{
+  background-color: #FFFFFF;
+  box-shadow: none;
+  outline: 0 none;
+}
+.search-box-icon{
+  color: var(--color-primary);
+  font-size: 20px;
+}
+.split{
+  color: #e7e7e7;
+}
+.search-box button{
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  height: 35px;
+  width: 100px;
+  
+}
+.words{
+  font-size: 3rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  text-transform: uppercase;
+  /* background-color: #fff; */
+}
+.home-right-section{
+  width: 50%;
+
+
+  padding: 80px;
+ 
+}
+
+.home-bottom{
+  /* height: 30%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+}
+.bottom-box{
+  background-color: #fff;
+  width: 300px;
+  /* border: 1px solid black; */
+  height: 100px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.icon-bottom{
+  font-size: 3.4rem;
+  color: var(--color-primary);
+ 
+}
+.bottom-box-icon{
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+ height: 100%;
+}
+.home-bottom-content{
+
+  width: 650px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+.home-bottom-content p{
+  color: #929292;
+  font-size: 1rem;
+}
