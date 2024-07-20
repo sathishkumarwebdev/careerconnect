@@ -1,7 +1,7 @@
 import React from "react";
 import { FaHandshake } from "react-icons/fa";
 import { BsShare } from "react-icons/bs";
-
+import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <nav className="nav">
@@ -19,10 +19,15 @@ function NavBar() {
         <div>Pricing Plans</div>
         <div>Customer Supports</div>
 
-        <button className="btn-login btn-list  animate__animated  animate__bounce">
-          Login
-        </button>
-        <button className="btn-signup btn-list">sign in</button>
+        <Link to={"/login"}>
+          <button className="btn-login btn-list  animate__animated  animate__bounce">
+            Login
+          </button>
+        </Link>
+
+        <Link to={"/account"}>
+          <button className="btn-register btn-list">Register</button>
+        </Link>
       </div>
     </nav>
   );

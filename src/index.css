@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alata&family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /* Box sizing rules */
 *,
 *::before,
@@ -281,7 +282,14 @@ nav {
   align-items: center;
   color: var(--color-primary);
 }
-
+.btn-register{
+  background-color: var(--color-background-primary);
+  color: var(--color-primary);
+}
+.btn-register:hover{
+  background-color: var(--color-primary);
+  color: #fff;
+}
 /* Home page */
 
 .home-container {
@@ -520,3 +528,178 @@ color: #18191C;
 .img{
 width: 0;
 }
+
+
+
+/* Account creation */
+
+.create-acc-container{
+  height: 120vh;
+  display: flex;
+  
+ flex-direction: column;
+justify-content: center;
+padding-bottom: 100px;
+
+background-image: url("./assets/login-background1.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+ 
+}
+.create-acc-container a{
+  text-decoration: none;
+}
+.section-part{
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-container{
+  background-color: #fff;
+  
+  font-family: "Open Sans", sans-serif;
+
+}
+.account-creation-container{
+display: flex;
+align-items: center;
+justify-content: center;
+ font-family: "PT Sans", sans-serif;
+ 
+}
+.account-creation-form{
+  height: auto;
+  width: 40%;
+  border: 1px solid var(--color-border-grey);
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.create-acc{
+  margin-bottom: 30px;
+}
+
+.create-acc h2{
+line-height: 30px;
+font-weight: 400;
+font-size: 24px;
+border-bottom: 3px solid #FDC600;
+display: inline;
+padding: 5px;
+text-transform: uppercase;
+color: var(--color-grey-badge);
+
+}
+.create-acc p{
+  font-size: 14px;
+  color: var(--color-grey-grade11);
+  margin-top: 20px;
+
+}
+.create-acc span{
+  color: var(--color-blue-lighter3);
+  font-weight: 550;
+  
+}
+
+.option{
+  height: 80px;
+  background-color: var(--color-grey-grade0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.option button{
+  border: none;
+  padding: 10px;
+ 
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 200px;
+  border-radius: 5px;
+  
+}
+.selected{
+  background-color: var(--color-primary);
+  color: #fff;
+   font-weight: 600;
+}
+.not-selected{
+  background-color: transparent;
+}
+.input-form{
+  margin-top: 20px;
+
+}
+.name-box{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.name-box input{
+  width: 220px;
+  border-radius: 5px;
+  height: 40px;
+  border: 1px solid var(--color-border-grey);
+  padding: 10px;
+}
+.general-input{
+  width: 100%;
+  
+}
+.general-input input{
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 5px;
+  height: 40px;
+ border: 1px solid var(--color-border-grey);
+  padding: 10px;
+
+}
+.text-input:focus{
+  border:2px solid var(--color-primary);
+  outline: none;
+}
+.register-btn{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  
+}
+.register-btn button{
+  border: none;
+  background-color: var(--color-primary);
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  color: #fff;
+   font-weight: 600;
+}
+.or{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+.sigin{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand-btn{
+  width: 200px;
+  border: 1px solid var(--color-border-grey);
+  height: 40px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: var(--color-grey-grade4);
+}
+.brand-btn:hover{
+  background-color: var(--color-blue-lighter4);
+}
+

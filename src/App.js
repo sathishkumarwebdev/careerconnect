@@ -1,11 +1,17 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import CreateAccount from "./pages/CreateAccount";
+import Login from "./pages/Login";
+import FindJob from "./pages/FindJob";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/account" element={<CreateAccount />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/findjob" element={<FindJob />} />
       </Routes>
     </>
   );
