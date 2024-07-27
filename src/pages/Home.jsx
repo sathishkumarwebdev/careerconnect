@@ -29,10 +29,18 @@ export default function Home() {
             </div>
             <div className="search-box  animate__animated  animate__bounceInRight">
               <FaSearch className="search-box-icon" />
-              <input type="text" className="box-input" />{" "}
+              <input
+                type="text"
+                className="box-input"
+                placeholder="Job title,Position,keyword..."
+              />{" "}
               <span className="split">|</span>
               <IoLocation className="search-box-icon" />
-              <input type="text" className="box-input" />
+              <input
+                type="text"
+                className="box-input"
+                placeholder="City, State or Zip code"
+              />
               <button>Find Job</button>
             </div>
           </div>
@@ -177,7 +185,7 @@ export default function Home() {
             </div>
             Apply job
             <div className="arrow-up">
-              <img src={uparrow} alt="" className="img"/>
+              <img src={uparrow} alt="" className="img" />
             </div>
           </div>
         </div>

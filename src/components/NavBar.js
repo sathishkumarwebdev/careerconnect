@@ -11,20 +11,22 @@ function NavBar() {
         <BsShare size={30} color="#FDC600" />
         Connect
       </div>
-      <div className="nav-list">
-        <div>Home</div>
-        <div>Find Job</div>
+      <div className="nav-list ">
+        <div>
+          <Link to={"/"}>Home</Link>
+        </div>
+        <div>
+          <Link to={"/findjob"}>Find Job</Link>
+        </div>
         <div>Employers</div>
         <div>Candidates</div>
-        <div>Pricing Plans</div>
+        <div>Services</div>
         <div>Customer Supports</div>
-
         <Link to={"/login"}>
           <button className="btn-login btn-list  animate__animated  animate__bounce">
             Login
           </button>
         </Link>
-
         <Link to={"/account"}>
           <button className="btn-register btn-list">Register</button>
         </Link>
