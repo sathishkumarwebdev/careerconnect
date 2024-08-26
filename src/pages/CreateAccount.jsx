@@ -1,27 +1,62 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsShare } from "react-icons/bs";
-import professional from "../assets/professional.webp";
-
-import { SelectButton } from "primereact/selectbutton";
 
 export default function () {
-  let option = "",
-    candidateBtn = "selected",
+  const formData = {
+    usertype: "",
+    firstname: "",
+    lastname: "",
+    emailaddress: "",
+    password: "",
+  };
+  const [userData, setUserData] = useState(formData);
+
+  let candidateBtn = "selected",
     employerBtn = "not-selected";
   const [trigger, setTrigger] = useState(true);
 
   if (trigger) {
-    option = "canditate";
     candidateBtn = "selected";
     employerBtn = "not-selected";
   } else {
-    option = "employer";
     candidateBtn = "not-selected";
     employerBtn = "selected";
   }
+  const navigate = useNavigate();
 
-  console.log(option);
+  console.log(userData);
+  const handleOnChangeData = (e) => {
+    setUserData((data) => ({ ...data, [e.target.name]: e.target.value }));
+  };
+  const radioChanche = (e) => {
+    setUserData((data) => ({ ...data, [e.target.name]: e.target.value }));
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { firstname, lastname, emailaddress, password, usertype } = userData;
+    const body = { usertype, firstname, lastname, emailaddress, password };
+    const res = await fetch(
+      "https://careerconnect-server-zcqh.onrender.com/user",
+      {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    if (res) {
+      alert("sucess");
+    }
+
+    try {
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   return (
     <>
       <div className="create-acc-container">
@@ -49,7 +84,24 @@ export default function () {
                 </div>
               </div>
             </div>
+
             <div className="option">
+              <input
+                type="radio"
+                name="usertype"
+                value="canditate"
+                onChange={handleOnChangeData}
+              />{" "}
+              Canditate
+              <input
+                type="radio"
+                value="employer"
+                name="usertype"
+                onChange={handleOnChangeData}
+              />{" "}
+              Employer
+            </div>
+            {/* <div className="option">
               <div>
                 <button
                   onClick={() => setTrigger(true)}
@@ -66,20 +118,20 @@ export default function () {
                   Employers
                 </button>
               </div>
-            </div>
-            <div className="input-form">
+            </div> */}
+            {/* <div className="input-form">
               <div className="name-box">
                 <div>
                   <input
                     type="text"
-                    placeholder="Name"
+                    placeholder="First Name"
                     className="text-input"
                   />
                 </div>
                 <div>
                   <input
                     type="text"
-                    placeholder="User Name"
+                    placeholder="Last Name"
                     className="text-input"
                   />
                 </div>
@@ -107,6 +159,57 @@ export default function () {
               </div>
               <div className="register-btn">
                 <button>Register</button>
+              </div>
+            </div> */}
+            <div className="input-form">
+              <div className="name-box">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    className="text-input"
+                    name="firstname"
+                    onChange={handleOnChangeData}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="lastname"
+                    placeholder="Last Name"
+                    className="text-input"
+                    onChange={handleOnChangeData}
+                  />
+                </div>
+              </div>
+              <div className="general-input">
+                <input
+                  type="text"
+                  name="emailaddress"
+                  placeholder="Email Address"
+                  className="text-input"
+                  onChange={handleOnChangeData}
+                />
+              </div>
+              <div className="general-input">
+                <input
+                  type="text"
+                  name="password"
+                  placeholder="Password"
+                  className="text-input"
+                  onChange={handleOnChangeData}
+                />
+              </div>
+              {/* <div className="general-input">
+                <input
+                  type="text"
+                  placeholder="Confirm Password"
+                  className="text-input"
+                  onChange={checkPassword}
+                />
+              </div> */}
+              <div className="register-btn">
+                <button onClick={handleSubmit}>Register</button>
               </div>
             </div>
           </div>
