@@ -696,17 +696,18 @@ nav {
 
 .find-jo-container {
   height: auto;
-  background-color:#fff;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
- align-items: center;
-
+  align-items: center;
+  justify-content: center;
 }
 .find-job-word {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 40px;
+  margin-top: 20px;
   /* color: #fff; */
   color: var(--color-primary);
 }
@@ -714,46 +715,20 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 200px;
-  background-color: var(--color-primary);
-  background-image: url("./assets/jobfind.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-
- 
-    /* background-image: url("./assets/job.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; */
-  /* width: 75%; */
-  width: 100%;
-
-
+  justify-content: space-between;
+  height: 150px;
+  width: 80%;
 }
 .job-list-container {
   width: auto;
 
   height: auto;
   display: flex;
-  justify-content: space-evenly;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* margin: 50px 20px 50px 20px; */
-  /* background-color: #fff; */
-}
-.job-section{
-  /* width: 20%; */
-  /* width: 75%; */
-  /* border: 1px solid var(--color-border-grey); */
- 
-  background-color: #fff;
-  /* margin: 10px; */
-  height: 100px;
-  display: flex;
   justify-content: center;
-  align-items:center;
-  
+  margin-left: 25px;
+  margin-top: 20px;
 }
+
 .job-find-list {
   width: 69%;
   height: inherit;
@@ -765,8 +740,6 @@ nav {
   background-color: #fff;
   /* margin: 10px; */
   /* margin-top: 20px; */
-
-  
 }
 .job-list-box {
   width: 250px;
@@ -777,12 +750,12 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  padding-left: 30px;
+  padding-left: 20px;
   /* box-shadow: 0 25px 60px rgba(113, 106, 147, 0.2); */
   justify-content: space-between;
   border: 1px solid var(--color-border-grey);
   /* line-height: 2px; */
-   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 .job-name {
   font-size: 20px;
@@ -810,9 +783,9 @@ nav {
   align-items: center;
   color: var(--color-grey-badge);
 }
-.job-search-container{
+.job-search-container {
   border: 1px solid var(--color-border-grey);
-  width: 100%;
+  width: 80%;
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -821,14 +794,15 @@ nav {
   border-radius: 5px;
 }
 
-.current-location,.filters{
+/* .current-location,
+.filters {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 60px;
-  /* border: 1px solid red; */
-}
-.filters{
+  
+} */
+.filters {
   /* border: 1px solid black; */
   height: 35px;
   padding: 5px;
@@ -836,17 +810,22 @@ nav {
   background-color: var(--color-grey-grade12);
   border-radius: 5px;
   color: var(--color-grey-grade14);
+  
 }
-.serach-text-box{
+.filter-title-main{
+    border-bottom: var(--color-border-grey) 1px solid;
+    padding-bottom: 5px;
+}
+
+.serach-text-box {
   border: none;
   width: 300px;
-  
+
   padding: 5px;
   padding-left: 10px;
-
 }
-.job-search-container button{
-  width:100px;
+.job-search-container button {
+  width: 100px;
   height: 40px;
   margin-left: 10px;
   /* margin-right: 10px; */
@@ -855,12 +834,47 @@ nav {
   color: #fff;
   border-radius: 5px;
 }
-.serach-text-box:focus{
+.serach-text-box:focus {
   outline: none;
 }
 
-.filter-section{
-  width: 20%;
+.filter-section {
+  width: 15%;
   height: auto;
   border: 1px solid var(--color-border-grey);
+  padding: 10px;
+  margin-top: 10px;
+   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.filter-options {
+  border-bottom: var(--color-border-grey) 1px solid;
+  font-size: 12px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  line-height: 30px;
+}
+.filter-title {
+  color: var(--color-primary-yellow);
+  font-size: 18px;
+}
+.filter-section h3 {
+  color: var(--color-grey-badge);
+  text-transform: uppercase;
+}
+.apply-filter-btn {
+  padding: 10px;
+  padding-bottom: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.apply-filter-btn button {
+  border: none;
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-primary);
+  color: #fff;
 }

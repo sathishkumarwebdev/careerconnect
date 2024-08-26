@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaHandshake } from "react-icons/fa";
 import { BsShare } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -12,7 +13,7 @@ function NavBar() {
         Connect
       </div>
       <div className="nav-list ">
-        <div>
+        <div >
           <Link to={"/"}>Home</Link>
         </div>
         <div>
