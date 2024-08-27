@@ -13,8 +13,11 @@ import { LuUserPlus2 } from "react-icons/lu";
 import { MdCloudUpload } from "react-icons/md";
 import { IoSearchCircle } from "react-icons/io5";
 import { TbRosetteDiscountCheckFilled } from "react-icons/tb";
+ import { ToastContainer, toast } from "react-toastify";
+ import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
+  const notify = () => toast("Wow so easy!");
   return (
     <>
       <NavBar />
@@ -189,6 +192,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
       </div>
     </>
   );

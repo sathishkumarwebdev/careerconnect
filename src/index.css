@@ -600,13 +600,10 @@ nav {
 
 .option {
   height: 80px;
-  /* background-color: var(--color-grey-grade0); */
+  background-color: var(--color-grey-grade0);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 250px;
-  margin-left: 90px;
-  
 }
 .option button {
   border: none;
@@ -813,11 +810,10 @@ nav {
   background-color: var(--color-grey-grade12);
   border-radius: 5px;
   color: var(--color-grey-grade14);
-  
 }
-.filter-title-main{
-    border-bottom: var(--color-border-grey) 1px solid;
-    padding-bottom: 5px;
+.filter-title-main {
+  border-bottom: var(--color-border-grey) 1px solid;
+  padding-bottom: 5px;
 }
 
 .serach-text-box {
@@ -847,7 +843,7 @@ nav {
   border: 1px solid var(--color-border-grey);
   padding: 10px;
   margin-top: 10px;
-   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 .filter-options {
   border-bottom: var(--color-border-grey) 1px solid;

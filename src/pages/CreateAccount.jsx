@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BsShare } from "react-icons/bs";
+import { toast, ToastContainer,Flip } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function () {
   const formData = {
-    usertype: "",
+    usertype: "canditate",
     firstname: "",
     lastname: "",
     emailaddress: "",
     password: "",
   };
   const [userData, setUserData] = useState(formData);
-
+  const [trigger, setTrigger] = useState(true);
   let candidateBtn = "selected",
     employerBtn = "not-selected";
-  const [trigger, setTrigger] = useState(true);
 
   if (trigger) {
     candidateBtn = "selected";
@@ -23,15 +24,36 @@ export default function () {
     candidateBtn = "not-selected";
     employerBtn = "selected";
   }
+
+  const handleCanditateBtn = () => {
+    setUserData((data) => ({ ...data, usertype: "canditate" }));
+    setTrigger(true);
+  };
+  const handleemployeBtn = () => {
+    setUserData((data) => ({ ...data, usertype: "employer" }));
+    setTrigger(false);
+  };
+
   const navigate = useNavigate();
 
   console.log(userData);
   const handleOnChangeData = (e) => {
     setUserData((data) => ({ ...data, [e.target.name]: e.target.value }));
   };
-  const radioChanche = (e) => {
-    setUserData((data) => ({ ...data, [e.target.name]: e.target.value }));
-  };
+
+  const notify = () =>{ navigate("/login")
+    toast.success("Sucess", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Flip,
+
+    })};
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { firstname, lastname, emailaddress, password, usertype } = userData;
@@ -47,9 +69,12 @@ export default function () {
         },
       }
     );
-    if (res) {
-      alert("sucess");
+
+    if (res.status === 201) {
+      notify();
+      
     }
+    console.log(res.status);
 
     try {
     } catch (err) {
@@ -85,7 +110,7 @@ export default function () {
               </div>
             </div>
 
-            <div className="option">
+            {/* <div className="option">
               <input
                 type="radio"
                 name="usertype"
@@ -100,25 +125,19 @@ export default function () {
                 onChange={handleOnChangeData}
               />{" "}
               Employer
-            </div>
-            {/* <div className="option">
+            </div> */}
+            <div className="option">
               <div>
-                <button
-                  onClick={() => setTrigger(true)}
-                  className={candidateBtn}
-                >
+                <button onClick={handleCanditateBtn} className={candidateBtn}>
                   Candidate
                 </button>
               </div>
               <div>
-                <button
-                  onClick={() => setTrigger(false)}
-                  className={employerBtn}
-                >
+                <button onClick={handleemployeBtn} className={employerBtn}>
                   Employers
                 </button>
               </div>
-            </div> */}
+            </div>
             {/* <div className="input-form">
               <div className="name-box">
                 <div>
@@ -215,6 +234,7 @@ export default function () {
           </div>
         </div>
       </div>
+      <ToastContainer autoClose="true"/>
     </>
   );
 }
