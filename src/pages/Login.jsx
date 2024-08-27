@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { BsShare } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { UserContext } from "../provider/UserProvider";
 import { toast, ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export default function Login() {
@@ -11,31 +12,34 @@ export default function Login() {
     password: "",
   };
 
+  const [trigger, setTrigger] = useState(false);
   const [loginData, SetLoginData] = useState(formData);
   const navigate = useNavigate();
+  const context = useContext(UserContext);
+  const { setUserData, userData } = context;
+
+  console.log(trigger);
 
   const handleLogin = (e) => {
     SetLoginData((data) => ({ ...data, [e.target.name]: e.target.value }));
   };
-    const notify = () => {
-  
-      toast.success("Sucess", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Flip,
-      });
-      
-      // setTimeout(navigate("/"), 5000);
-    };
+  const notify = () => {
+    toast.success("Sucess", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Flip,
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setTrigger(true);
     const { emailaddress, password } = loginData;
     const body = { emailaddress, password };
     const res = await fetch(
@@ -50,18 +54,21 @@ export default function Login() {
       }
     );
     const data = await res.json();
-      
-    if(data.userLogin){
-      console.log(data.message);
-      
-      notify(data.message);
-      
-    }
-    else{
-      console.log(data.message);
-      
-    }
 
+    if (data.userLogin) {
+      const { userLogin } = data;
+      console.log(data.message);
+
+      notify("Welcome ");
+
+      navigate("/");
+      setUserData(userLogin);
+      console.log(data.userLogin);
+      console.log(userData);
+    } else {
+      console.log(data.message);
+    }
+    setTrigger(false);
     try {
     } catch (err) {
       console.error(err.message);
@@ -135,7 +142,9 @@ export default function Login() {
             </div>
 
             <div className="register-btn">
-              <button onClick={handleSubmit}>Login</button>
+              <button onClick={handleSubmit} disabled={trigger}>
+                Login
+              </button>
             </div>
           </div>
           <div className="or">or</div>
@@ -150,7 +159,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-      
     </div>
   );
 }

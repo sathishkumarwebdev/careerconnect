@@ -110,22 +110,7 @@ export default function () {
               </div>
             </div>
 
-            {/* <div className="option">
-              <input
-                type="radio"
-                name="usertype"
-                value="canditate"
-                onChange={handleOnChangeData}
-              />{" "}
-              Canditate
-              <input
-                type="radio"
-                value="employer"
-                name="usertype"
-                onChange={handleOnChangeData}
-              />{" "}
-              Employer
-            </div> */}
+         
             <div className="option">
               <div>
                 <button onClick={handleCanditateBtn} className={candidateBtn}>
@@ -138,48 +123,7 @@ export default function () {
                 </button>
               </div>
             </div>
-            {/* <div className="input-form">
-              <div className="name-box">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    className="text-input"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    className="text-input"
-                  />
-                </div>
-              </div>
-              <div className="general-input">
-                <input
-                  type="text"
-                  placeholder="Email Address"
-                  className="text-input"
-                />
-              </div>
-              <div className="general-input">
-                <input
-                  type="text"
-                  placeholder="Password"
-                  className="text-input"
-                />
-              </div>
-              <div className="general-input">
-                <input
-                  type="text"
-                  placeholder="Confirm Password"
-                  className="text-input"
-                />
-              </div>
-              <div className="register-btn">
-                <button>Register</button>
-              </div>
-            </div> */}
+          
             <div className="input-form">
               <div className="name-box">
                 <div>
@@ -219,14 +163,7 @@ export default function () {
                   onChange={handleOnChangeData}
                 />
               </div>
-              {/* <div className="general-input">
-                <input
-                  type="text"
-                  placeholder="Confirm Password"
-                  className="text-input"
-                  onChange={checkPassword}
-                />
-              </div> */}
+          
               <div className="register-btn">
                 <button onClick={handleSubmit}>Register</button>
               </div>
