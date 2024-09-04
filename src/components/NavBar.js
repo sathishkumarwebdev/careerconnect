@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
+import logo from "../assets/cc_logo.png";
 import { useNavigate } from "react-router-dom";
 import { FaHandshake } from "react-icons/fa";
+import { IoPersonCircleSharp } from "react-icons/io5";
 import { BsShare } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { UserContext } from "../provider/UserProvider";
@@ -11,12 +13,11 @@ function NavBar() {
 
   return (
     <nav className="nav">
-      <div className="logo">
-        Career
-        {/* <FaHandshake size={30} color="#FDC600" />   */}
-        <BsShare size={30} color="#FDC600" />
-        Connect
-      </div>
+      <Link to={"/"}>
+        <div className="logo-icon">
+          <img src={logo} />
+        </div>
+      </Link>
       <div className="nav-list ">
         <div>
           <Link to={"/"}>Home</Link>
@@ -37,9 +38,10 @@ function NavBar() {
         ) : (
           <div>Employers</div>
         )}
+        <div>About</div>
 
-        <div>Services</div>
-        <div>Customer Supports</div>
+        {/* <div>Services</div>
+        <div>Customer Supports</div> */}
         {usertype === "canditate" || usertype === "employer" ? (
           ""
         ) : (
@@ -50,7 +52,9 @@ function NavBar() {
           </Link>
         )}
         {usertype === "canditate" || usertype === "employer" ? (
-          ""
+          <div className="profile">
+            Profile <IoPersonCircleSharp className="profile-icon" />
+          </div>
         ) : (
           <Link to={"/account"}>
             <button className="btn-register btn-list">Register</button>

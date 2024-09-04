@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/cc_logo.png";
 import { BsShare } from "react-icons/bs";
-import { toast, ToastContainer,Flip } from "react-toastify";
+import { toast, ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function () {
@@ -41,7 +42,8 @@ export default function () {
     setUserData((data) => ({ ...data, [e.target.name]: e.target.value }));
   };
 
-  const notify = () =>{ navigate("/login")
+  const notify = () => {
+    navigate("/login");
     toast.success("Sucess", {
       position: "top-right",
       autoClose: 5000,
@@ -52,8 +54,8 @@ export default function () {
       progress: undefined,
       theme: "light",
       transition: Flip,
-
-    })};
+    });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { firstname, lastname, emailaddress, password, usertype } = userData;
@@ -72,7 +74,6 @@ export default function () {
 
     if (res.status === 201) {
       notify();
-      
     }
     console.log(res.status);
 
@@ -100,17 +101,24 @@ export default function () {
                   </Link>
                 </div>
                 <div className="logo-container">
-                  <div className="logo">
+                  {/* <div className="logo">
                     Career
-                    {/* <FaHandshake size={30} color="#FDC600" />   */}
+                    
                     <BsShare size={30} color="#FDC600" />
                     Connect
-                  </div>
+                  </div> */}
+                  <Link to={"/"}>
+                    <div className="logo-icon">
+                      {/* Career
+                  <BsShare size={30} color="#FDC600" />
+                  Connect */}
+                      <img src={logo} />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
 
-         
             <div className="option">
               <div>
                 <button onClick={handleCanditateBtn} className={candidateBtn}>
@@ -123,7 +131,7 @@ export default function () {
                 </button>
               </div>
             </div>
-          
+
             <div className="input-form">
               <div className="name-box">
                 <div>
@@ -163,7 +171,7 @@ export default function () {
                   onChange={handleOnChangeData}
                 />
               </div>
-          
+
               <div className="register-btn">
                 <button onClick={handleSubmit}>Register</button>
               </div>
@@ -171,7 +179,7 @@ export default function () {
           </div>
         </div>
       </div>
-      <ToastContainer autoClose="true"/>
+      <ToastContainer autoClose="true" />
     </>
   );
 }

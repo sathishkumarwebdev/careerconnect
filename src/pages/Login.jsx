@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/cc_logo.png"
 import { BsShare } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -111,11 +112,14 @@ export default function Login() {
                 </Link>
               </div>
               <div className="logo-container">
-                <div className="logo">
-                  Career
+                <Link to={"/"}>
+                  <div className="logo-icon">
+                    {/* Career
                   <BsShare size={30} color="#FDC600" />
-                  Connect
-                </div>
+                  Connect */}
+                    <img src={logo} />
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
