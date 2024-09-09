@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/cc_logo.png"
+import logo from "../assets/cc_logo.png";
 import { BsShare } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { UserContext } from "../provider/UserProvider";
 import { toast, ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { RotatingLines } from "react-loader-spinner";
 export default function Login() {
   const formData = {
     emailaddress: "",
@@ -14,6 +15,7 @@ export default function Login() {
   };
 
   const [trigger, setTrigger] = useState(false);
+  const [loadder, setLodder] = useState(false);
   const [loginData, SetLoginData] = useState(formData);
   const navigate = useNavigate();
   const context = useContext(UserContext);
@@ -24,23 +26,12 @@ export default function Login() {
   const handleLogin = (e) => {
     SetLoginData((data) => ({ ...data, [e.target.name]: e.target.value }));
   };
-  const notify = () => {
-    toast.success("Sucess", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Flip,
-    });
-  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setTrigger(true);
+    setLodder(true);
     const { emailaddress, password } = loginData;
     const body = { emailaddress, password };
     const res = await fetch(
@@ -57,10 +48,11 @@ export default function Login() {
     const data = await res.json();
 
     if (data.userLogin) {
+      setLodder(false);
       const { userLogin } = data;
       console.log(data.message);
 
-      notify("Welcome ");
+     
 
       navigate("/");
       setUserData(userLogin);
@@ -70,11 +62,31 @@ export default function Login() {
       console.log(data.message);
     }
     setTrigger(false);
+    setLodder(false);
     try {
     } catch (err) {
       console.error(err.message);
     }
   };
+
+  if (loadder) {
+    return (
+      <div className="loader">
+        <RotatingLines
+          visible={true}
+          height="96"
+          width="96"
+          color="#faf3da"
+          strokeWidth="5"
+          strokeColor="#fdc600"
+          animationDuration="0.75"
+          ariaLabel="rotating-lines-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
+  }
 
   // const handleSubmit = async (e) => {
 
@@ -162,6 +174,7 @@ export default function Login() {
             </button>
           </div>
         </div>
+      
       </div>
     </div>
   );

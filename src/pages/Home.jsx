@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useContext} from "react";
 import NavBar from "../components/NavBar";
 import career from "../assets/career.svg";
 import downarrow from "../assets/downarrow.png"
@@ -13,11 +13,14 @@ import { LuUserPlus2 } from "react-icons/lu";
 import { MdCloudUpload } from "react-icons/md";
 import { IoSearchCircle } from "react-icons/io5";
 import { TbRosetteDiscountCheckFilled } from "react-icons/tb";
- import { ToastContainer, toast } from "react-toastify";
- import "react-toastify/dist/ReactToastify.css";
+import { UserContext } from "../provider/UserProvider";
+ 
 
 export default function Home() {
-  const notify = () => toast("Wow so easy!");
+   const context = useContext(UserContext);
+   const { userData } = context;
+   const { firstname, lastname, usertype } = userData;
+ 
   return (
     <>
       <NavBar />
@@ -193,10 +196,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div>
-        <button onClick={notify}>Notify!</button>
-        <ToastContainer />
-      </div>
+      
+  
+       
+      
     </>
   );
 }

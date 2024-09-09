@@ -164,7 +164,7 @@ export default function () {
               </div>
               <div className="general-input">
                 <input
-                  type="text"
+                  type="password"
                   name="password"
                   placeholder="Password"
                   className="text-input"

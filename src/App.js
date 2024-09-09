@@ -15,7 +15,7 @@ function App() {
           <Route path="/account" element={<CreateAccount />} />
           <Route path="/login" element={<Login />} />
           <Route path="/findjob" element={<FindJob />} />
-          {/* <ToastContainer /> */}
+         
         </Routes>
       </UserProvider>
     </>
